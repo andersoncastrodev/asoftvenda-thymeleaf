@@ -1,0 +1,34 @@
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="topo/head :: head"></head>
+
+<body>
+
+	<header th:replace="topo/topo :: header"> </header>
+
+	<nav th:replace="menu/menu.html :: menu"> </nav>
+
+	<main class="container mt-5">
+
+		<!--Inicio da ROW com o conteudo centralizado -->
+		<row class="row d-flex justify-content-center">
+		
+		
+
+			<img th:src="@{img/home.png}" style="height: 600px ; width: 800px;" />
+
+		
+			<!-- <aside th:replace="menu/menulateral :: menulateral"> </aside> -->
+
+			
+		</row>
+
+		<!--Fim da ROW -->
+
+	</main>
+
+	<footer th:replace="rodape/rodape :: rodape"> </footer>
+
+</body>
+
+</html>

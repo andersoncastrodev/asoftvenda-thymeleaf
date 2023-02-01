@@ -1,0 +1,68 @@
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="topo/head :: head"></head>
+
+<body>
+
+	<header th:replace="topo/topo :: header"> </header>
+
+	<nav th:replace="menu/menu :: menu"> </nav>
+
+	<main class="container mt-5">
+		
+		<row class="col-sm-12">
+			<h5 class="text-center">Clientes</h5>
+			<nav class="navbar navbar-light bg-light">
+			  <div class="container-fluid">
+				<a href="/cliente/novo-cliente"><i class="bi bi-person-add"></i> Novo </a>
+			    <form class="d-flex">
+			      <input class="form-control me-2" type="search" aria-label="Search">
+			      <button class="btn btn-primary" type="submit">Pesquisar</button>
+			    </form>
+			  </div>
+			</nav>
+			
+		</row>
+
+		<!--Inicio da ROW com o conteudo centralizado -->
+		<row class="d-flex justify-content-center">
+	
+				<table class="table thead-dark ">
+				  <thead class="thead-dark">
+				    <tr>
+				      <th scope="col">Id</th>
+				      <th scope="col">Nome</th>
+				      <th scope="col">Telefone</th>
+				      <th scope="col">Data Nascimento</th>
+				      <th scope="col">Endereço</th>
+				      <th scope="col">Situação</th>
+				      <th class="text-center" scope="col">Editar</th>
+				      <th class="text-center" scope="col">Excluir</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr th:each="cli : ${clientes}">
+					    <td th:text="${cli.id}"></td>
+					    <td th:text="${cli.nome}"></td>
+					    <td th:text="${cli.telefone}"></td>
+					    <td th:text="${cli.dataNascimento}"></td>
+					    <td th:text="${cli.endereco.lograduro}"></td>
+					    <td th:text="${cli.ativo}"></td>
+					    <td class="text-center" > <a href=""> <i class="bi bi-pencil"></i>  </a> </td>
+					    <td class="text-center" > <a href=""> <i class="bi bi-trash3"></i> </a> </td>
+					</tr>
+
+				  </tbody>
+				</table>				
+
+		 <!-- <aside th:replace="menu/menulateral :: menulateral"> </aside>  -->
+		 
+		</row>
+		<!--Fim da ROW -->
+	</main>
+
+	<footer th:replace="rodape/rodape :: rodape"> </footer>
+
+</body>
+
+</html>
