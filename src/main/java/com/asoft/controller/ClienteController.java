@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -69,11 +70,15 @@ public class ClienteController {
 	@GetMapping("/novo-cliente")
 	public ModelAndView novoCliente() {
 		
-		return new ModelAndView("cliente/clientescad");
+		ModelAndView clienteNovo = new ModelAndView("cliente/clientescad");
+		
+		clienteNovo.addObject("clienteNovo", new Cliente());
+		
+		return clienteNovo ;
 	}
 	
 	@PostMapping
-	public ResponseEntity<?> adicionar(@RequestBody Cliente cliente){
+	public ResponseEntity<?> adicionar(@ModelAttribute Cliente cliente){
 		
 		try {
 			
