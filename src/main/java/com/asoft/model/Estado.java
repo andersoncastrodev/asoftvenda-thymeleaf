@@ -16,7 +16,7 @@ public class Estado {
 	private Long id;
 	
 	@Column(nullable = false)
-	private String nome;
+	private String nomeEstado;
 
 	
 	public Long getId() {
@@ -27,12 +27,12 @@ public class Estado {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getNomeEstado() {
+		return nomeEstado;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeEstado(String nome) {
+		this.nomeEstado = nome;
 	}
 
 	@Override

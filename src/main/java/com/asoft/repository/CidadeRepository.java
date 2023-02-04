@@ -10,7 +10,7 @@ import com.asoft.model.Cidade;
 @Repository
 public interface CidadeRepository extends JpaRepository<Cidade, Long> {
 
-	List<Cidade> findByNomeContaining(String nome);
+	List<Cidade> findByNomeCidadeContaining(String nomeCidade);
 	
 	@Query( nativeQuery = true, value = "select c.nome as cidade, e.nome as estado from Cidade c inner join Estado e on c.id = e.id ")
 	List<String> buscaCidadeEstado();

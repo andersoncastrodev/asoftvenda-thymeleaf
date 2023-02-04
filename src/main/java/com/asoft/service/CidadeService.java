@@ -34,7 +34,7 @@ public class CidadeService {
 	
 	public List<Cidade> consultarLikeNome(String nome){
 		
-		return cidadeRepository.findByNomeContaining(nome);
+		return cidadeRepository.findByNomeCidadeContaining(nome);
 	}
 	
 	public List<String> consultaCidadeEstado(){

@@ -18,7 +18,7 @@ public class Cidade {
 	private Long id;
 	
 	@Column(nullable = false)
-	private String nome;
+	private String nomeCidade;
 
 	@ManyToOne
 	@JoinColumn(name = "estado_id", nullable = false)
@@ -32,12 +32,12 @@ public class Cidade {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getNomeCidade() {
+		return nomeCidade;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeCidade(String nome) {
+		this.nomeCidade = nome;
 	}
 	
 	public Estado getEstado() {

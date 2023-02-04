@@ -9,5 +9,5 @@ import com.asoft.model.Estado;
 public interface EstadoRepository extends JpaRepository<Estado, Long> {
 
 	//Like por nome do estado.
-	List<Estado> findByNomeContaining(String nome);
+	List<Estado> findByNomeEstadoContaining(String nomeEstado);
 }

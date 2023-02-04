@@ -10,11 +10,14 @@
 
 	<main class="container mt-5" style="height: 600px">
 		
-		   <form method="post" th:action="@{/cliente}" th:object="${clienteNovo}">
-				
+		   <form method="post" th:action="@{/cliente}">
+			
 				<h6>Cadastro de cliente:</h6>
 				
 				<div class="container">
+				
+			  <div th:object="${clienteNovo}" > <!--Div cliente -->	
+			  
 				  <div class="row">
 					  
 				    <div class="col">				  
@@ -37,25 +40,78 @@
 				  	</div>
 				  	
 				    <div class="col">
-					  <label for="nome" class="form-label">Situação</label>
-					  <input type="text" class="form-control" id="data" th:field="*{ativo}">
-								 	  
+					  <label for="ativo" class="form-label"> Situação </label>
+					  <select class="form-select" th:field="*{ativo}">
+						<option value="1" selected>Ativo</option>
+						<option value="0">Inativo</option>
+					  </select>					  
+		 	  
 					</div>
 					
 				  </div>
-				  				  
+				  
+				</div>	<!--Fim da Div cliente -->
+				
+			 <div th:object="${enderecoNovo}" > <!--Div Endereco -->
+			 
+				  <div class="row mt-3">
+					  
+				    <div class="col">				  
+					  <label for="rua" class="form-label">Rua</label>
+				 	  <input type="text" class="form-control" id="rua" th:field="*{lograduro}">
+				  	</div>
+				  	
+				    <div class="col">				  
+					  <label for="numero" class="form-label">Numero</label>
+				 	  <input type="text" class="form-control" id="numero" th:field="*{numero}">
+				  	</div>
+					
+				  </div>
+
+				  <div class="row mt-3">
+					  
+				    <div class="col">				  
+					  <label for="bairro" class="form-label">Bairro</label>
+				 	  <input type="text" class="form-control" id="bairro" th:field="*{bairro}">
+				  	</div>
+				  	
+				    <div class="col">				  
+					  <label for="comple" class="form-label">Complemento</label>
+				 	  <input type="text" class="form-control" id="comple" th:field="*{complemento}">
+				  	</div>
+					
+				  </div>
+
+			</div><!--Fim da Div Endereco -->
+			
+			<div th:object="${cidadeNovo}" > <!--Div Cidade -->
+					
+					<div class="col">				  
+					  <label for="cidade" class="form-label">Cidade</label>
+				 	  <input type="text" class="form-control" id="cidade" th:field="*{nomeCidade}">
+				  	</div>
+				
+			</div>
+			
+			<div th:object="${estadoNovo}" > <!--Div Cidade -->
+				    <div class="col">				  
+					  <label for="estado" class="form-label">Estado</label>
+				 	  <input type="text" class="form-control" id="estado" th:field="*{nomeEstado}">
+				  	</div>			
+				
+			</div>
+				
 				  <div class="row">
 					  
 					  <div class="col-4 mt-3">
 					      <button type="submit" class="btn btn-primary">Salvar</button>
-						  <a href="/" class="btn btn-primary"> Voltar </a>					        
+						  <a th:href="@{/cliente}" class="btn btn-primary"> Voltar </a>					        
 					  </div>
 				  
 				  </div>
-
 				  
-				</div>	
-							
+		    </div>
+		    							
 			</form>			
 
 		<!--Fim da ROW -->
